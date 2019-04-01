@@ -2,10 +2,10 @@ from collections import Counter
 from collections import OrderedDict
 
 
-def sort(this_dict):
-    sorted_dict = [(i, thisDict[i]) for i in thisDict]
+def desc_sort(input_dict):
+    sorted_dict = [(i, input_dict[i]) for i in input_dict]
     sorted_dict.sort(key=lambda x: x[1], reverse=True)
-    return sortedDict
+    return sorted_dict
 
 
 words = []
@@ -14,5 +14,5 @@ for line in file:
     for word in line.split():
         words.append(word)
 counts = Counter(words)
-counts = sort(counts)
+counts = desc_sort(counts)
 print(counts[:250])
